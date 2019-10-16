@@ -1,0 +1,72 @@
+* {
+    Box-sizing: border-box; 
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.page-layout-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.game-board-3x3-flex {
+    display: flex;
+    /* flex-direction: row; */
+    flex-wrap: wrap;
+    /* flex-flow: wrap; */
+    align-items: center;
+    /* flex-shrink: 0; */
+    align-content: stretch;
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;    
+    
+    -webkit-box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 5px 5px 15px 5px rgba(0,0,0,0);
+
+
+}
+ 
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    border: 5px solid black;
+    flex-grow: 1;
+
+    width: 33.33%;
+    height: 33.33%;
+    user-select: none; 
+    cursor: pointer;
+
+
+
+}
+
+header {
+    margin: 50px 0;
+    text-align: center;
+}
+
+header > h1 {
+    font-size: 50px;
+}
+
+footer {
+    margin: 40px;
+    text-align: right;
+}
+
+button {
+    user-select: none; 
+    cursor: pointer;
+    width: 90px;
+    height: 30px;
+    margin: 3%;
+    border-radius: 5%;
+    font-size: 12px;
+
+}
