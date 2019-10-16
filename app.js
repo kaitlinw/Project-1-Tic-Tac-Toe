@@ -4,6 +4,9 @@ var newGameBtn = document.querySelectorAll('.new-game')
 var extremeModeBtn = document.querySelector('.extreme-mode')
 var announceWinner = document.querySelector('.announce-winner')
 
+var extremeModeBtnClicked = false
+var winnerDeclared = false
+var randomChance = 0
 var currentPlayer = null
 var clickCounter = 0
 
@@ -38,15 +41,10 @@ var possibleWinCombinations = [
 
 // CHECK FOR WINNER
 var checkForWinner = function () {
-    if (currentPlayer === player1) {
-        var checkPlayer = player1.plays
-
-    } else if (currentPlayer === player2) {
-        var checkPlayer = player2.plays
-    }
+    var checkPlayer = currentPlayer.plays
 
     console.log("Checking for win: " + currentPlayer.id)
-    var counter = 0
+    var winCounter = 0
 
     // debugger
     //loops through each possible win combination array in the win array
@@ -56,78 +54,85 @@ var checkForWinner = function () {
         for (var n = 0; n < currentPossibleWinCombo.length; n++) {
             //checks if check player array contains the index n of winner array
             if (checkPlayer.includes(currentPossibleWinCombo[n])) {
-                counter++
-
+                winCounter++
             }
-
         }
-        if (counter === 3) {
+        if (winCounter === 3) {
             console.log(currentPossibleWinCombo)
-            console.log(`Player ${currentPlayer.id} wins!`)
+            console.log(`PLAYER ${currentPlayer.id} WINS!!!!`)
             announceWinner.textContent = `Player ${currentPlayer.id} wins!`
+            winnerDeclared = true
             break
         }
-        counter = 0
-
-    }
-
-
-}
-
-
-
-// click initiates - run game function
-var clickHandlePlay = function () {
-    if (event.target.textContent !== "") {
-        console.log("Cannot select box")
-        event.target.classList.add("wiggle")
-        event.target.addEventListener("mouseout")
-
-    } else {
-        if (clickCounter % 2 === 0) { //whose turn?
-            player1.plays.push(Number(event.target.id)) //push to player 1
-            event.target.textContent = player1.token
-            currentPlayer = player1
-            console.log(player1.plays)
-        } else {
-            player2.plays.push(Number(event.target.id)) //push to player 2
-            event.target.textContent = player2.token
-            currentPlayer = player2
-            console.log(player2.plays)
-
-        }
-        clickCounter += 1
-        console.log("PlayerID: " + currentPlayer.id + ", Clicks: " + clickCounter + ", box ID: " + event.target.id)
-        if (clickCounter >= 5) {
-            checkForWinner()
-        }
+        winCounter = 0
     }
 }
 
 var initiateExtremeMode = function () {
     //20% of the times the user clicks a box
+    extremeModeBtnClicked = true
     console.log("extreme mode initiated")
-    var randomChance = Math.round(Math.random() * 10)
+    randomChance = Math.round(Math.random() * 10)
+    console.log("random chance: " + randomChance)
 
     if (randomChance <= 2) {
 
         if (currentPlayer === player1) {
-            currentPlayer.token = player2.token
+            currentPlayer = player2
+            event.target.style.color = "darkblue"
 
         } else if (currentPlayer === player2) {
-            currentPlayer.token = player1.token
+            currentPlayer = player1
+            event.target.style.color = "red"
         }
-
+        clickCounter++
     }
-    console.log(randomChance)
 }
 
+var determineCurrentPlayer = function () {
+    if (clickCounter % 2 === 0) { //whose turn?
+        currentPlayer = player1
 
-// HTML links
+    } else {
+        currentPlayer = player2
+
+    }
+    clickCounter++
+
+}
+
+// click initiates - run game function
+var clickHandlePlay = function () {
+    if (event.target.textContent !== "" || winnerDeclared) {
+        console.log("Cannot select box")
+        // event.target.classList.add("wiggle")
+        // event.target.addEventListener("mouseout")
+    } else {
+
+        determineCurrentPlayer()
+
+        if (extremeModeBtnClicked === true) {
+            initiateExtremeMode()
+        }
+        event.target.textContent = currentPlayer.token
+
+
+        currentPlayer.plays.push(Number(event.target.id))
+        console.log(currentPlayer.plays)
+
+        console.log("PlayerID: " + currentPlayer.id + ", Clicks: " + clickCounter + ", box ID: " + event.target.id)
+        if (clickCounter >= 5) {
+            checkForWinner()
+
+        }
+    }
+
+}
+
+// Event listeners
 boxes.forEach(function (box) {
     // box.textContent = box.id
     box.addEventListener('click', clickHandlePlay)
 })
 
-extremeModeBtn.addEventListener('click', initiateExtremeMode)
 

@@ -17,10 +17,12 @@
         <h1>Tic Tac Toe</h1>
         <nav>
             <button class="new-game" onclick="location.reload();">New Game</button>
-            <button class="extreme-mode">Extreme Mode</button>
+            <button class="extreme-mode" onclick="initiateExtremeMode();">Extreme
+                Mode</button>
+            <!-- onclick="extremeModeStyling();" -->
         </nav>
     </header>
-    <main class="page-layout-flex">
+    <main class=" page-layout-flex">
         <section class="side"></section>
         <section class="game-board-3x3-flex">
             <div class="box" id="1"></div>
@@ -53,6 +55,21 @@
         <p>Made with &hearts; by KW</p>
     </footer>
 
+
+
+
+
+
+
+
+
+
+
+    <!-- <script class="html-styling">
+        var extremeModeStyling = function () {
+            document.querySelector('.extreme-mode').style.backgroundColor = "black";
+        }
+    </script> -->
 
 
     <script src="app.js"></script>
