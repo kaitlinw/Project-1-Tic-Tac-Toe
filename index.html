@@ -1,48 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tic Tac Toe</title>
-<link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-        
+
     <header>
         <h1>Tic Tac Toe</h1>
         <nav>
-            <button class="new-game">New Game</button>
+            <button class="new-game" onclick="location.reload();">New Game</button>
             <button class="extreme-mode">Extreme Mode</button>
         </nav>
     </header>
     <main class="page-layout-flex">
-    <section class="game-board-3x3-flex">
-        <div class="box" id="1"></div>
-        <div class="box" id="2"></div>
-        <div class="box" id="3"></div>
-        <div class="box" id="4"></div>
-        <div class="box" id="5"></div>
-        <div class="box" id="6"></div>
-        <div class="box" id="7"></div>
-        <div class="box" id="8"></div>
-        <div class="box" id="9"></div>
-    </section>
+        <section class="side"></section>
+        <section class="game-board-3x3-flex">
+            <div class="box" id="1"></div>
+            <div class="box" id="2"></div>
+            <div class="box" id="3"></div>
+            <div class="box" id="4"></div>
+            <div class="box" id="5"></div>
+            <div class="box" id="6"></div>
+            <div class="box" id="7"></div>
+            <div class="box" id="8"></div>
+            <div class="box" id="9"></div>
+        </section>
+        <section class="score-board side">
+            <h3 class="score-heading">Score Board</h3>
+            <h4 class="timer">Timer</h4>
+            <p class="timer">1.00</p>
+            <h4 class="current-player">Current turn</h4>
+            <p class="current-player">Player 1</p>
+            <h3 class="announce-winner"></h3>
+
+
+        </section>
     </main>
 
-    <section class="score-board">
-
-
-    </section>
 
 
 
-<footer>
-    <p>Made with &hearts; by KW</p>
-</footer>
+
+    <footer>
+        <p>Made with &hearts; by KW</p>
+    </footer>
 
 
 
     <script src="app.js"></script>
 </body>
+
 </html>
