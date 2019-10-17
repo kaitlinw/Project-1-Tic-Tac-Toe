@@ -1,6 +1,8 @@
 /* RESET */
 * {
     box-sizing: border-box; 
+    background-color: transparent;
+    color: white;
 }
 
 h1,
@@ -16,7 +18,16 @@ ul {
 body {
     margin: 0;
     max-height: 50%;
+    background-color: transparent;
+    
 }
+
+/* body {
+    background-image: linear-gradient(to bottom right, aquamarine, white);
+}
+
+    {"speed":2,"speedAdjFactor":0.03,"density":3,"shape":"circle","warpEffect":true,"warpEffectLength":5,"depthFade":true,"starSize":3,"backgroundColor":"hsl(263,45%,7%)","starColor":"#FFFFFF"}
+ */
 
 img {
     width:100%;
@@ -24,14 +35,13 @@ img {
 }
 
 /* customised */
-/* * {
 
-} */
 
 header {
-    padding: 40px 0 10px 0;
+    padding: 50px 0 20px 0;
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
+
 }
 
 header > h1 {
@@ -49,6 +59,10 @@ footer {
     height: auto;
 }
 
+.linkedIn-link {
+    text-decoration: none;
+}
+
 button {
     user-select: none; 
     cursor: pointer;
@@ -58,11 +72,11 @@ button {
     margin: 3%;
     border-radius:0.12em;
     font-size: 20px;
-    border:0.1em solid black;
+    border:0.1em solid white;
     text-decoration:none;
     font-family:'Roboto',sans-serif;
     font-weight: 300;
-    color: black;
+    color: white;
     text-align: center;
     transition: all 0.2s;
 }
@@ -71,8 +85,8 @@ button {
 button:focus {outline:0;}
 
 button:hover {
-    color:white;
-    background-color:black;
+    color:rgb(0, 0, 0, 1);
+    background-color:white;
 }
 
 
@@ -85,27 +99,44 @@ button:hover {
 }
 
 .extreme-true {
-    background-color: black;
-    color: white;
+    background-color: #ffffff;
+    color: rgb(0,0,0, 1);
 }
 
-
-
+canvas {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left:0;
+    top:0;
+    z-index:-1;
+  }
+  
 .page-layout-flex {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;   
-    /* flex-direction: column; */
+
+
 }
 
-.side {
+.side-instructions {
     /* margin: 0px 10%; */
+    align-self: baseline; 
+    text-align: left;
+    border: 2px solid white;
+    padding: 2%;
     width: 240px;
-    padding: 0 2%;
-    height: auto;
-    /* border: 2px solid black;     */
-    margin: 15px 10px auto auto;
+    height: 330px;
+    font-size: 20px;
+    border-radius:0.12em;
+    opacity: 1;
+    /* height: auto; */
+    margin: 15px 15px auto auto;
 
 
 }
@@ -116,13 +147,15 @@ button:hover {
     justify-content: center; */
     align-self: baseline; 
     text-align: left;
-    margin: 15px auto auto 15px;
-    border: 2px solid black;
+    margin: 15px auto auto 20px;
+    border: 2px solid white;
     padding: 2%;
     width: 240px;
-    height: 300px;
+    height: 330px;
     font-size: 20px;
     border-radius:0.12em;
+    opacity: 1;
+
 
     /* flex-wrap: wrap;    */
 
@@ -142,11 +175,13 @@ button:hover {
     align-content: stretch;
     width: 500px;
     height: 500px;
-    border: 1px solid black; 
+    /* border: 1px solid white;  */
     margin-top: 15px;   
     margin-left: auto;
     margin-right: auto;
     border-radius:0.12em;
+    opacity: 1;
+
 
     /* padding-top: 100%; */
     
@@ -161,20 +196,62 @@ button:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 40px;
-    border: 2px solid black;
+    font-size: 60px;
+    border: 3px solid white;
     flex-grow: 1;
-    
     width: 33.33%;
     height: 33.33%;
     user-select: none; 
     cursor: pointer;
-    /* padding-top: 100%; */
-
-
-
+    opacity: 1;
+    font-family: 'Quicksand', sans-serif;
 
 }
+
+
+
+/* Animations */
+
+/* .rotate-center {
+	animation: rotate-center 10s linear infinite both;
+}
+
+
+ @keyframes rotate-center {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+   */
+
+
+
+
+
+   .bg-pan-left {
+	animation: bg-pan-left 2s cubic-bezier(0.550, 0.085, 0.680, 0.530) infinite alternate-reverse both;
+}
+
+@keyframes bg-pan-left {
+    0% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+
+
+
+
+
+
+
+
 
 .wiggle {
     -webkit-animation-name: wiggle;

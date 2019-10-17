@@ -114,6 +114,8 @@ var checkForWinner = function () {
 var initiateExtremeMode = function () {
     extremeModeBtn.classList.add("extreme-true")
     extremeModeBtnClicked = true
+    debugger
+    // launch()
     console.log("extreme mode initiated")
     randomChance = Math.round(Math.random() * 10)
     console.log("random chance: " + randomChance)
@@ -121,10 +123,10 @@ var initiateExtremeMode = function () {
     if (randomChance <= 5) {
         if (currentPlayer === player1) {
             currentPlayer = player2
-            event.target.style.color = "darkblue"
+            event.target.style.color = "darkblue" // make flash
         } else if (currentPlayer === player2) {
             currentPlayer = player1
-            event.target.style.color = "red"
+            event.target.style.color = "red" // make flash
         }
     }
 }

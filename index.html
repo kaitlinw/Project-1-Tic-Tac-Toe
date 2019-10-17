@@ -7,10 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tic Tac Toe</title>
 
+    <link href="https://fonts.googleapis.com/css?family=Quicksand|Rubik&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <canvas id="cv"></canvas>
 
     <header>
         <h1>Tic Tac Toe</h1>
@@ -24,8 +26,14 @@
 
     </header>
     <main class=" page-layout-flex">
-        <section class="side"></section>
-        <section class="game-board-3x3-flex">
+        <section class="side-instructions">
+            <h3 class="instructions">Tickety Tackety Toe. Or Tic Tac Toe as you may know.</h3>
+            <p>The first person to score 3 in a row wins the game! And if you are feeling particularly lucky, try
+                playing in Extreme
+                Mode.</p>
+
+        </section>
+        <section class="game-board-3x3-flex rotate-center">
             <div class="box" id="1"></div>
             <div class="box" id="2"></div>
             <div class="box" id="3"></div>
@@ -48,12 +56,10 @@
         </section>
     </main>
 
-
-
-
-
     <footer>
-        <p>Made with &hearts; by KW</p>
+        <a class="linkedIn-link" href="https://www.linkedin.com/in/kaitlinjanewalsh/" target="_blank">
+            <p>Made with &hearts; by KW</p>
+        </a>
     </footer>
 
 
@@ -72,7 +78,7 @@
         }
     </script> -->
 
-
+    <script src="app2.js"></script>
     <script src="app.js"></script>
 </body>
 
