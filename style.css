@@ -15,6 +15,7 @@ ul {
 
 body {
     margin: 0;
+    max-height: 50%;
 }
 
 img {
@@ -23,23 +24,29 @@ img {
 }
 
 /* customised */
-* {
-    /* font-family: 'Shadows Into Light Two', cursive; */
- 
-}
+/* * {
+
+} */
 
 header {
     padding: 40px 0 10px 0;
     text-align: center;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 header > h1 {
     font-size: 80px;
 }
 
+
+p {
+    font-family:'Roboto',sans-serif;
+}
+
 footer {
     margin: 40px;
     text-align: right;
+    height: auto;
 }
 
 button {
@@ -61,13 +68,9 @@ button {
 }
 
 
+button:focus {outline:0;}
 
 button:hover {
-    color:white;
-    background-color:black;
-}
-
-button:visited {
     color:white;
     background-color:black;
 }
@@ -81,6 +84,10 @@ button:visited {
     }
 }
 
+.extreme-true {
+    background-color: black;
+    color: white;
+}
 
 
 
@@ -88,21 +95,37 @@ button:visited {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;   
+    /* flex-direction: column; */
 }
 
 .side {
-    margin: 0px 10%;
+    /* margin: 0px 10%; */
+    width: 240px;
+    padding: 0 2%;
+    height: auto;
+    /* border: 2px solid black;     */
+    margin: 15px 10px auto auto;
+
+
 }
 
 .score-board {
     /* /* display: flex; */
     /* align-items: center;
-    justify-content: center; */ 
-    display: inline;
+    justify-content: center; */
+    align-self: baseline; 
     text-align: left;
-    margin: 5%;
+    margin: 15px auto auto 15px;
     border: 2px solid black;
-    padding: 1% 10px;
+    padding: 2%;
+    width: 240px;
+    height: 300px;
+    font-size: 20px;
+    border-radius:0.12em;
+
+    /* flex-wrap: wrap;    */
+
 }
 
 .announce-winner {
@@ -120,11 +143,16 @@ button:visited {
     width: 500px;
     height: 500px;
     border: 1px solid black; 
-    margin: 5%;   
-    
-    -webkit-box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 5px 5px 15px 5px rgba(0,0,0,0); 
-    box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 5px 5px 15px 5px rgba(0,0,0,0);
+    margin-top: 15px;   
+    margin-left: auto;
+    margin-right: auto;
+    border-radius:0.12em;
 
+    /* padding-top: 100%; */
+    
+    /* -webkit-box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 5px 5px 15px 5px rgba(0,0,0,0);
+ */
 
 }
  
@@ -136,14 +164,34 @@ button:visited {
     font-size: 40px;
     border: 2px solid black;
     flex-grow: 1;
-
+    
     width: 33.33%;
     height: 33.33%;
     user-select: none; 
     cursor: pointer;
+    /* padding-top: 100%; */
 
 
 
+
+}
+
+.wiggle {
+    -webkit-animation-name: wiggle;
+    -moz-animation-name: wiggle;
+    -ms-animation-name: wiggle;
+    -o-animation-name: wiggle;
+    animation-name: wiggle;
+    -webkit-animation-timing-function: ease-in;
+    -moz-animation-timing-function: ease-in;
+    -ms-animation-timing-function: ease-in;
+    -o-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+	-webkit-animation-duration: 1s;
+	-moz-animation-duration: 1s;
+	-ms-animation-duration: 1s;
+	-o-animation-duration: 1s;
+	animation-duration: 1s;
 }
 
 
@@ -217,20 +265,4 @@ button:visited {
 	100% { transform: skewX(0deg); }
 }
 
-.wiggle:target {
-    -webkit-animation-name: wiggle;
-    -moz-animation-name: wiggle;
-    -ms-animation-name: wiggle;
-    -o-animation-name: wiggle;
-    animation-name: wiggle;
-    -webkit-animation-timing-function: ease-in;
-    -moz-animation-timing-function: ease-in;
-    -ms-animation-timing-function: ease-in;
-    -o-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-	-webkit-animation-duration: 1s;
-	-moz-animation-duration: 1s;
-	-ms-animation-duration: 1s;
-	-o-animation-duration: 1s;
-	animation-duration: 1s;
-}
+

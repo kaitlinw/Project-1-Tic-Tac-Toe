@@ -3,6 +3,9 @@ var boxes = document.querySelectorAll('.box')
 var newGameBtn = document.querySelectorAll('.new-game')
 var extremeModeBtn = document.querySelector('.extreme-mode')
 var announceWinner = document.querySelector('.announce-winner')
+var displayPlayer = document.querySelectorAll('.player')
+var displayTimer = document.querySelector('.timer')
+
 
 var extremeModeBtnClicked = false
 var winnerDeclared = false
@@ -39,7 +42,45 @@ var possibleWinCombinations = [
     [3, 5, 7]
 ]
 
-// CHECK FOR WINNER
+
+// click initiates - run game function
+var clickHandlePlay = function () {
+    // if (clickCounter === 0) {
+    //     timer()
+    // }
+    if (event.target.textContent !== "" || winnerDeclared) {
+        console.log("Cannot select box")
+        event.target.classList.add("wiggle")
+
+    } else {
+        determineCurrentPlayer()
+        if (extremeModeBtnClicked === true) {
+            initiateExtremeMode()
+        }
+        event.target.textContent = currentPlayer.token
+        currentPlayer.plays.push(Number(event.target.id))
+        console.log("PlayerID: " + currentPlayer.id + ", Clicks: " + clickCounter + ", box ID: " + event.target.id + ", Currentplayer array: " + currentPlayer.plays)
+        if (clickCounter >= 5) {
+            checkForWinner()
+        }
+        if (clickCounter === 9) {
+            announceWinner.textContent = "It's a draw!"
+        }
+    }
+
+}
+
+var determineCurrentPlayer = function () {
+    if (clickCounter % 2 === 0) { //whose turn?
+        currentPlayer = player1
+    } else {
+        currentPlayer = player2
+    }
+    clickCounter++
+    displayPlayer.textContent = currentPlayer.id
+}
+
+
 var checkForWinner = function () {
     var checkPlayer = currentPlayer.plays
 
@@ -62,72 +103,42 @@ var checkForWinner = function () {
             console.log(`PLAYER ${currentPlayer.id} WINS!!!!`)
             announceWinner.textContent = `Player ${currentPlayer.id} wins!`
             winnerDeclared = true
+            timer()
             break
         }
         winCounter = 0
     }
 }
 
+//20% of the time the user clicks a box, the player swaps.
 var initiateExtremeMode = function () {
-    //20% of the times the user clicks a box
+    extremeModeBtn.classList.add("extreme-true")
     extremeModeBtnClicked = true
     console.log("extreme mode initiated")
     randomChance = Math.round(Math.random() * 10)
     console.log("random chance: " + randomChance)
 
-    if (randomChance <= 2) {
-
+    if (randomChance <= 5) {
         if (currentPlayer === player1) {
             currentPlayer = player2
             event.target.style.color = "darkblue"
-
         } else if (currentPlayer === player2) {
             currentPlayer = player1
             event.target.style.color = "red"
         }
-        clickCounter++
     }
 }
 
-var determineCurrentPlayer = function () {
-    if (clickCounter % 2 === 0) { //whose turn?
-        currentPlayer = player1
+// // var timer = function () {
+// if (winnerDeclared) {
+//     //stop timer
+// }
+// // displayTimer.textContent = 
 
-    } else {
-        currentPlayer = player2
-
-    }
-    clickCounter++
-
-}
-
-// click initiates - run game function
-var clickHandlePlay = function () {
-    if (event.target.textContent !== "" || winnerDeclared) {
-        console.log("Cannot select box")
-        // event.target.classList.add("wiggle")
-        // event.target.addEventListener("mouseout")
-    } else {
-
-        determineCurrentPlayer()
-
-        if (extremeModeBtnClicked === true) {
-            initiateExtremeMode()
-        }
-        event.target.textContent = currentPlayer.token
+// // // }
 
 
-        currentPlayer.plays.push(Number(event.target.id))
-        console.log(currentPlayer.plays)
 
-        console.log("PlayerID: " + currentPlayer.id + ", Clicks: " + clickCounter + ", box ID: " + event.target.id)
-        if (clickCounter >= 5) {
-            checkForWinner()
-
-        }
-    }
-
-}
 
 // Event listeners
 boxes.forEach(function (box) {
