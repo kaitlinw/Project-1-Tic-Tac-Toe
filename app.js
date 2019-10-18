@@ -4,10 +4,11 @@ var newGameBtn = document.querySelectorAll('.new-game')
 var extremeModeBtn = document.querySelector('.extreme-mode')
 var announceWinner = document.querySelector('.announce-winner')
 var displayPlayer = document.querySelector('.playerId')
-var displayTimer = document.querySelector('.timer')
 var makeExtreme = document.querySelectorAll('.extreme-colors')
-
-
+//Timer
+var displayTimer = document.querySelector('.display-timer')
+var timerCounter = 0
+var timerId = null
 
 var extremeModeBtnClicked = false
 var winnerDeclared = false
@@ -17,14 +18,12 @@ var clickCounter = 0
 
 var player1 = {
     id: 1,
-    turn: "first",
     token: "X",
     plays: []
 }
 
 var player2 = {
     id: 2,
-    turn: "second",
     token: "O",
     plays: []
 }
@@ -47,9 +46,9 @@ var possibleWinCombinations = [
 
 // click initiates - run game function
 var clickHandlePlay = function () {
-    // if (clickCounter === 0) {
-    //     timer()
-    // }
+    if (clickCounter === 0) {
+        startTimer()
+    }
     if (event.target.textContent !== "" || winnerDeclared) {
         console.log("Cannot select box")
         event.target.classList.add("wiggle")
@@ -106,7 +105,7 @@ var checkForWinner = function () {
             console.log(`PLAYER ${currentPlayer.id} WINS!!!!`)
             announceWinner.textContent = `Player ${currentPlayer.id} wins!`
             winnerDeclared = true
-            timer()
+            stopTimer()
             break
         }
         winCounter = 0
@@ -145,6 +144,28 @@ var initiateExtremeMode = function () {
 // // // }
 
 
+
+
+// TIMER
+var timerCount = function () {
+
+    timerCounter++
+    displayTimer.textContent = timerCounter
+}
+
+var startTimer = function () {
+    timerId = setInterval(timerCount, 1000) //
+}
+
+var stopTimer = function () {
+    clearInterval(timerId)
+}
+
+
+
+
+
+// STYLING FUNCTIONS FOR EXTREME MODE
 var changeColor = function () {
 
     for (var i = 0; i < makeExtreme.length; i++) {
@@ -160,6 +181,7 @@ var flicker = function () {
     setInterval(changeColor, 100)
 
 }
+
 
 
 

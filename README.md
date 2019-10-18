@@ -1,3 +1,42 @@
+
+
+# PROJECT 1: TIC TAC TOE
+
+Check it out [here]:https://kaitwal.github.io/Project-1-Tic-Tac-Toe/
+
+
+### Snapshots of the game
+#### Normal Mode
+![normal mode]()
+#### Extreme Mode!
+![extreme mode]()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //PSEUDO CODE
 
 // player 1 takes turn - clicks a box
@@ -18,3 +57,5 @@
 //checkForWinner function runs
 //if player2 is also not winner, else statement, print "Its a draw!""
 //limit boxes to ony be clicked once
+
+
