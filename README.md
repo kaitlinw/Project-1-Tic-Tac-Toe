@@ -7,9 +7,9 @@ Check it out [here]:https://kaitwal.github.io/Project-1-Tic-Tac-Toe/
 
 ### Snapshots of the game
 #### Normal Mode
-![normal mode](https://github.com/kaitwal/Project-1-Tic-Tac-Toe/blob/master/Screen%20Shot%202019-10-18%20at%201.01.38%20pm.png?raw=true =200x250)
+![normal mode](https://github.com/kaitwal/Project-1-Tic-Tac-Toe/blob/master/Screen%20Shot%202019-10-18%20at%201.01.38%20pm.png?raw=true)
 #### Extreme Mode!
-![extreme mode](https://github.com/kaitwal/Project-1-Tic-Tac-Toe/blob/master/Screen%20Shot%202019-10-18%20at%201.01.48%20pm.png?raw=true =200x250)
+![extreme mode](https://github.com/kaitwal/Project-1-Tic-Tac-Toe/blob/master/Screen%20Shot%202019-10-18%20at%201.01.48%20pm.png?raw=true)
 
 
 ### How it works
