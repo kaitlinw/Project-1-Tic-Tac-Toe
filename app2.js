@@ -6,7 +6,8 @@ var stars = 1600;			  // 1600
 var fov = 80;				    // 100 - not actual fov in degrees
 var extraW = 5000;      // 5000
 var extraH = 2400;	    // 2400
-var colorOfStars = "white"
+var colorOfStars = "white";
+var backgroundColor = 'rgb(9, 10, 41)';
 
 var canv = document.getElementById('cv');
 document.querySelector('body').onresize = resizeCanv;
@@ -126,7 +127,7 @@ function drawText(items, text) {
 
 function animate() {
     ctx.save();
-    ctx.fillStyle = 'rgb(9, 10, 41)';
+    ctx.fillStyle = backgroundColor;
     ctx.fillRect(0, 0, canv.width, canv.height);
     ctx.translate(xMax, yMax);
     ctx.fillStyle = colorOfStars;
@@ -155,7 +156,13 @@ function animate() {
     window.requestAnimationFrame(animate);
 
     if (accelerate) {
-        if (vel < speed_limit) vel += 0.08;
+
+        if (extremeModeBtnClicked) {
+            vel = 10;
+        }
+        else if (vel < speed_limit) {
+            vel += 0.08;
+        }
     }
 
 
@@ -166,16 +173,18 @@ function animate() {
 init();
 animate();
 
-var maintainSpeed = function () {
-    clearInterval(animate)
 
-}
+// 1) create an interval here
 
 
-    // 1) create an interval here
-    // 2) create a function to pass into the interval
-    // 3) make the function create a random color
-    `rgb(${Math.round(Math.random() * 255)},${Math.round(Math.random() * 255)},${Math.round(Math.random() * 255)})`
+// // 2) create a function to pass into the interval
+// var changeColor = function () {
+//     colorOfStars = `rgb(${Math.round(Math.random() * 255)},${Math.round(Math.random() * 255)},${Math.round(Math.random() * 255)})`
+
+// }
+
+// changeColor()
+//     // 3) make the function create a random color
 // 4) assign the random color to the colorOfStars
 
 

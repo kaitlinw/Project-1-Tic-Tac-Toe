@@ -8,17 +8,27 @@
     <title>Tic Tac Toe</title>
 
     <link href="https://fonts.googleapis.com/css?family=Quicksand|Rubik&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900|Zilla+Slab+Highlight:400,700&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 
 <body>
+
     <canvas id="cv"></canvas>
 
     <header>
-        <h1>Tic Tac Toe</h1>
+        <h1 class="tic-tac-toe extreme-colors"><span class="slide-in-fwd-top-1 extreme-colors">Tic </span><span
+                class="slide-in-fwd-top-2 extreme-colors">Tac </span><span
+                class="slide-in-fwd-top-3 extreme-colors">Toe</span>
+        </h1>
         <nav>
-            <button class="new-game" onclick="location.reload();">New Game</button>
-            <button class="extreme-mode" onclick="initiateExtremeMode();">Extreme
+            <button class="new-game extreme-colors" onclick="location.reload();">New Game</button>
+            <button class="extreme-mode extreme-colors" onclick="initiateExtremeMode();">Extreme
                 Mode</button>
             <!-- onclick="extremeModeStyling();" -->
         </nav>
@@ -26,30 +36,30 @@
 
     </header>
     <main class=" page-layout-flex">
-        <section class="side-instructions">
-            <h3 class="instructions">Tickety Tackety Toe. Or Tic Tac Toe as you may know.</h3>
-            <p>The first person to score 3 in a row wins the game! And if you are feeling particularly lucky, try
+        <section class="side-instructions side-left extreme-colors">
+            <h3 class="instructions extreme-colors">Tickety Tackety Toe. Or Tic Tac Toe as you may know.</h3>
+            <p class="extreme-colors">The first person to score 3 in a row wins the game! And if you are feeling
+                particularly lucky, try
                 playing in Extreme
                 Mode.</p>
-
         </section>
-        <section class="game-board-3x3-flex rotate-center">
-            <div class="box" id="1"></div>
-            <div class="box" id="2"></div>
-            <div class="box" id="3"></div>
-            <div class="box" id="4"></div>
-            <div class="box" id="5"></div>
-            <div class="box" id="6"></div>
-            <div class="box" id="7"></div>
-            <div class="box" id="8"></div>
-            <div class="box" id="9"></div>
+        <section class="game-board-3x3-flex center">
+            <div class="box extreme-colors" id="1"></div>
+            <div class="box extreme-colors" id="2"></div>
+            <div class="box extreme-colors" id="3"></div>
+            <div class="box extreme-colors" id="4"></div>
+            <div class="box extreme-colors" id="5"></div>
+            <div class="box extreme-colors" id="6"></div>
+            <div class="box extreme-colors" id="7"></div>
+            <div class="box extreme-colors" id="8"></div>
+            <div class="box extreme-colors" id="9"></div>
         </section>
-        <section class="score-board">
-            <h3 class="score-heading">Score Board</h3>
-            <h4 class="timer">Timer</h4>
-            <p class="timer">0:00</p>
-            <h4 class="current-player">Current Turn</h4>
-            <p class="current-player">Player <span class="player">1</span></p>
+        <section class="score-board side-right extreme-colors">
+            <h3 class="score-heading extreme-colors">Score Board</h3>
+            <h4 class="timer extreme-colors">Timer</h4>
+            <p class="timer extreme-colors">0:00</p>
+            <h4 class="current-player extreme-colors">Current Turn</h4>
+            <p class="current-player extreme-colors">Player <span class="playerId extreme-colors">1</span></p>
             <h3 class="announce-winner"></h3>
 
 
@@ -58,7 +68,7 @@
 
     <footer>
         <a class="linkedIn-link" href="https://www.linkedin.com/in/kaitlinjanewalsh/" target="_blank">
-            <p>Made with &hearts; by KW</p>
+            <p class="made-by extreme-colors">Made with &hearts; by KW</p>
         </a>
     </footer>
 

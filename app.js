@@ -3,8 +3,10 @@ var boxes = document.querySelectorAll('.box')
 var newGameBtn = document.querySelectorAll('.new-game')
 var extremeModeBtn = document.querySelector('.extreme-mode')
 var announceWinner = document.querySelector('.announce-winner')
-var displayPlayer = document.querySelectorAll('.player')
+var displayPlayer = document.querySelector('.playerId')
 var displayTimer = document.querySelector('.timer')
+var makeExtreme = document.querySelectorAll('.extreme-colors')
+
 
 
 var extremeModeBtnClicked = false
@@ -64,6 +66,7 @@ var clickHandlePlay = function () {
             checkForWinner()
         }
         if (clickCounter === 9) {
+            announceWinner.classList.add('swirl-in-fwd')
             announceWinner.textContent = "It's a draw!"
         }
     }
@@ -114,7 +117,8 @@ var checkForWinner = function () {
 var initiateExtremeMode = function () {
     extremeModeBtn.classList.add("extreme-true")
     extremeModeBtnClicked = true
-    debugger
+    flicker()
+    // debugger
     // launch()
     console.log("extreme mode initiated")
     randomChance = Math.round(Math.random() * 10)
@@ -122,11 +126,12 @@ var initiateExtremeMode = function () {
 
     if (randomChance <= 5) {
         if (currentPlayer === player1) {
+            event.target.classList.add("swirl-in-fwd") // make flash
             currentPlayer = player2
-            event.target.style.color = "darkblue" // make flash
         } else if (currentPlayer === player2) {
+            event.target.classList.add("bounce-top")
             currentPlayer = player1
-            event.target.style.color = "red" // make flash
+
         }
     }
 }
@@ -140,6 +145,22 @@ var initiateExtremeMode = function () {
 // // // }
 
 
+var changeColor = function () {
+
+    for (var i = 0; i < makeExtreme.length; i++) {
+        var colorExplode = `rgb(${Math.round(Math.random() * 255)},${Math.round(Math.random() * 255)},${Math.round(Math.random() * 255)})`
+        makeExtreme[i].style.color = colorExplode
+        makeExtreme[i].style.borderColor = colorExplode
+        colorOfStars = colorExplode
+        backgroundColor = 'black'
+    }
+}
+
+var flicker = function () {
+    setInterval(changeColor, 100)
+
+}
+
 
 
 // Event listeners
@@ -147,5 +168,4 @@ boxes.forEach(function (box) {
     // box.textContent = box.id
     box.addEventListener('click', clickHandlePlay)
 })
-
 
