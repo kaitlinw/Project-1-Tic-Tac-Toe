@@ -41,7 +41,7 @@ Creating the checkThewinner function was easily the most difficult challenge in 
 
 
 ### Cool Tech
-Researching a theme, I stumbled across a start field background that looked really really cool. Apart from simply loving the visual effect, after playing around with the code from codepen, I found a way to speed it up and also change the colours or make the dots become emojis. A very fun idea but dots were the more stylistic choice for the game. Nonetheless, changing these elements of the background truly set the scene for what was ambitiously name "Extreme Mode". Tic Tac Toe can only become so extreme, however this 
+Researching a theme, I stumbled across a start field background that looked really really cool. Apart from simply loving the visual effect, after playing around with the code from codepen, I found a way to speed it up and also change the colours or make the dots become emojis. A very fun idea but dots were the more stylistic choice for the game. Nonetheless, changing these elements of the background truly set the scene for what was ambitiously name "Extreme Mode". Tic Tac Toe can only become so extreme, however I believe this feature successfully achieves this.
 
 ### Lessons learned
 
@@ -53,7 +53,7 @@ Finally, the last major lesson learned was to keep not only my css styling organ
 
 Overall I am happy with the game, and from this I will focus on how to manage my CSS elements in a simple way, as well as potentially add more features in the future. 
 
-I hope you enjoyed the game!
+I hope you enjoy the game!
 
 
 
