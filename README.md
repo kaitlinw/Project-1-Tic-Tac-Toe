@@ -2,7 +2,7 @@
 
 # PROJECT 1: TIC TAC TOE
 
-Check it out here: https://kaitwal.github.io/Project-1-Tic-Tac-Toe/
+Check it out here: https://kaitlinw.github.io/Project-1-Tic-Tac-Toe/
 
 
 ### Snapshots of the game
